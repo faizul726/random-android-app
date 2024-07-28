@@ -22,6 +22,11 @@ jobs:
           distribution: 'zulu'
           java-version: '11'
 
+      - name: Install Gradle
+        uses: gradle/gradle-build-action@v2
+        with:
+          gradle-version: '7.4.2' # specify the Gradle version you need
+
       - name: Cache Gradle packages
         uses: actions/cache@v2
         with:
@@ -33,7 +38,7 @@ jobs:
             ${{ runner.os }}-gradle
 
       - name: Build with Gradle
-        run: ./gradlew build
+        run: gradle build
 
       - name: Archive build artifacts
         uses: actions/upload-artifact@v2
