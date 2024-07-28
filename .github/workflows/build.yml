@@ -25,7 +25,7 @@ jobs:
       - name: Install Gradle
         uses: gradle/gradle-build-action@v2
         with:
-          gradle-version: '7.4.2' # specify the Gradle version you need
+          gradle-version: '8.0' # specify the correct Gradle version
 
       - name: Cache Gradle packages
         uses: actions/cache@v2
